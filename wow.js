@@ -502,7 +502,7 @@
      //if both tokens good, display page
      //on display show messaging option -- this has no direct connection with contract
      //when send push api array of obj...name, message {name, message}
-     //listen for last message in obj array and push to set...
+     //listen for last message in obj array and push to set... [listen for change in object state]
      //on my end, connect twilio and send link format with message header, so i can just push from phone
      //show all messages in dashboard from each person 
      //remove all client info using a cron...check for expiration, delete where priv token
