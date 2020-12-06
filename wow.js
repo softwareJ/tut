@@ -1,4 +1,6 @@
-
+    //this is a tutorial for contract submitting. in prototype phase. 
+    //goal is to understand object building, handling undefined when dealing with operations. multiple error handling sets, scope, and eventually authentication using an api which is used on server side. upadating api state..., setting end times for api credentials(delete), cron jobs on api data, ect...
+    //basic math operations, sockets, ect.. 
 	
     //contract submission********************************************************************************************************* hit from other function when everything seems good
     init = (function() { 
@@ -27,7 +29,7 @@
     		}
     	}
     	
-      //1 -- using undefined for operations -- I have to for the entire form to go through to display errors
+        //1 -- using undefined for operations -- I have to for the entire form to go through to display errors
     	function calculate() {
     	    
     		var oneDay = 24 * 60 * 60 * 1000;
@@ -90,7 +92,7 @@
     		
     	}
     
-      //2
+        //2
     	function setAssignments() {
     		var value = document.getElementById("assignments").value;
     		if(!value || value == null || value.length > 700 || value.length < 20) { errorObject.tasksAndDutiesErrorId = "Assignment text must be between 20 and 700 characters"; return;  }
@@ -100,7 +102,7 @@
     		projScope.innerHTML += "<p>" + tasksAndDuties.assignmentText + "</p>";
     	}
     
-      //3 -- check for length on this
+        //3 -- check for length on this
     	function setAgreements() {
 
     		var trueLength = [];
@@ -240,7 +242,7 @@
     	}
     	
     
-      //2
+        //2
     	function pushDb(paymentInfo, agreements, tasksAndDuties) {
     		let errorsLength = document.getElementsByClassName("errIds");
     		$.ajax({
