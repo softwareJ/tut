@@ -105,9 +105,9 @@
 
     		var trueLength = [];
     		var falseLength = [];
-	  		var formCheckBoxes = document.getElementsByClassName("formCheckBoxes");
+	  	var formCheckBoxes = document.getElementsByClassName("formCheckBoxes");
 			
-		  	if(formCheckBoxes.length !== 14) { location.replace("initContract.html?nope=Dont mess with the document"); };
+		if(formCheckBoxes.length !== 14) { location.replace("initContract.html?nope=Dont mess with the document"); };
     		
     		for(let i = 0; i < formCheckBoxes.length; i++) {
     			if(formCheckBoxes[i].checked == true) {
@@ -145,8 +145,8 @@
     	    if(!signature || signature == null || signature.length < 4) { errorObject.signatureErrorId = "Signature: Please enter more than four letters"; }
     	    if(Object.keys(errorObject).length > 0) { return; }
     	    paymentInfo.signature = signature;
-    	  	document.getElementById("signatureModal").innerHTML = `<h2 style = 'margin-left: 25px'><u>*Signature</u></h2>`;
-    	  	document.getElementById("signatureModal").innerHTML += "<p style = 'margin-left: 25px'>" + paymentInfo.signature + "</p>";
+    	    document.getElementById("signatureModal").innerHTML = `<h2 style = 'margin-left: 25px'><u>*Signature</u></h2>`;
+    	    document.getElementById("signatureModal").innerHTML += "<p style = 'margin-left: 25px'>" + paymentInfo.signature + "</p>";
     	}
     
         //5
@@ -158,9 +158,9 @@
     	    if(Object.keys(errorObject).length > 0) { return; }
     	    paymentInfo.email = email;
     	    paymentInfo.phone = phone;
-    	  	document.getElementById("contactModal").innerHTML = `<h2 style = 'margin-left: 25px'><u>*Contact Info</u></h2>`;
-    	  	document.getElementById("contactModal").innerHTML += "<p style = 'margin-left: 25px'>" + paymentInfo.email + "</p>";
-    	  	document.getElementById("contactModal").innerHTML += "<p style = 'margin-left: 25px'>" + paymentInfo.phone + "</p>";
+    	    document.getElementById("contactModal").innerHTML = `<h2 style = 'margin-left: 25px'><u>*Contact Info</u></h2>`;
+    	    document.getElementById("contactModal").innerHTML += "<p style = 'margin-left: 25px'>" + paymentInfo.email + "</p>";
+    	    document.getElementById("contactModal").innerHTML += "<p style = 'margin-left: 25px'>" + paymentInfo.phone + "</p>";
     	}
     
         //------------------------------------------------------------- first call stack extensions
@@ -174,7 +174,7 @@
     			var last = i === paymentInfo.invoiceDates.length - 1 ? "end" : paymentInfo.invoiceDates[i + 1];
     			var payment = i + 1 === paymentInfo.invoiceDates.length ? "Free extended time" : paymentInfo.payPerInvoice
     			element.innerHTML += `
-                <div class="user-frame container" style = "margin-top: 5px">
+                       <div class="user-frame container" style = "margin-top: 5px">
             		<h2><u> inv ${i+1}/${paymentInfo.invoiceDates.length-1}</u></h2>
             		<b class = "contractInfo">start date: ${paymentInfo.invoiceDates[i]} </b>
             		<hr>
@@ -189,7 +189,7 @@
             		<button class = "btn" style = "border-radius: 0px; background-color: black; color: white; margin-top: 30px;" onclick = "edit()" >Edit</button>
     			</div> `;
     		}
-    	    invoiceSet.appendChild(element);
+    	                invoiceSet.appendChild(element);
     	}
     	
     	//invoice extension -- 
@@ -204,7 +204,7 @@
     		var singleDate;
     		invoiceDates.push(convertDateString(startDate));
     		for(let i = 0; i < invoiceLength; i++) {
-    			singleDate = startDate.setDate(startDate.getDate() + increment);
+    		    	singleDate = startDate.setDate(startDate.getDate() + increment);
     			singleDate = new Date(singleDate);
     			invoiceDates.push(convertDateString(singleDate));
     		}
@@ -214,8 +214,8 @@
         //cs 1 extension
     	function parseDate(input) {
         	try {
-        		  var parts = input.match(/(\d+)/g);
-        		  return new Date(parts[0], parts[1] - 1, parts[2]);
+        	      var parts = input.match(/(\d+)/g);
+        	      return new Date(parts[0], parts[1] - 1, parts[2]);
         	  } catch(err) {
         	      return undefined;
         	  }
@@ -258,13 +258,13 @@
     				if(typeof(result) == "string") {
     					reRoute(result);
     				} else {
-    					alert("Please fix the errors in red"); //loop through hrefs and run gsap
-    					$('#myModal').modal('hide');
+    				   alert("Please fix the errors in red"); //loop through hrefs and run gsap
+    				    $('#myModal').modal('hide');
     				    for(let i = 0; i < errorsLength.length; i++) { errorsLength[i].innerHTML = ""; }
     				    for(let i = 0; i < result.length; i++) {
-						  	var element = result[i].split("-")[0];
-							  var text = result[i].split("-")[1];
-							  document.getElementById(element).innerHTML = `<b style = "color: red">*${text}</b>`;
+					    var element = result[i].split("-")[0];
+					    var text = result[i].split("-")[1];
+					    document.getElementById(element).innerHTML = `<b style = "color: red">*${text}</b>`;
     				}
     			}
     		},
@@ -440,30 +440,30 @@
                     default: return;
         	    }
         	    
-        	    //checking error count and updating div and enabling button if good, diabling if bad
-        	    let count = 0;
+        	//checking error count and updating div and enabling button if good, diabling if bad
+        	var count = 0;
                 for(var o in errObject) {
                     if(errObject[o]) {
                         count+=1;
                     }
-        	    }
+        	}
         	    
-        	    //enable button here for submission
-        	    if(count === Object.keys(errObject).length) { enableButton.disabled = false;  } else { enableButton.disabled = true; }
+        	//enable button here for submission
+        	if(count === Object.keys(errObject).length) { enableButton.disabled = false;  } else { enableButton.disabled = true; }
 
     	  }
     })();
     
     
-  //live chat with ATRAIN -- shared hosting soll ill just connect my twilio account and send messages to a foreign domain and update my db 
-	messages = (function(){
+       //live chat with ATRAIN -- shared hosting soll ill just connect my twilio account and send messages to a foreign domain and update my db 
+       messages = (function(){
 
-    //connect 
+        //connect 
 
-    //on send -- to me
+        //on send -- to me
 
-    //on receive from me
+        //on receive from me
 
-    //
+        //
 
 	})();
