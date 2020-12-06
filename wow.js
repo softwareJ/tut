@@ -1,5 +1,5 @@
     //this is a tutorial for contract submitting. in prototype phase. 
-    //goal is to understand object building, handling undefined when dealing with operations. multiple error handling sets, scope, and eventually authentication using an api which is used on server side. upadating api state..., setting end times for api credentials(delete), cron jobs on api data, ect...
+    //goal is to understand object building, handling undefined when dealing with operations. multiple error handling sets, scope, and eventually authentication using an api which is used on server side. upadating api state..., setting end times for api credentials(delete), cron jobs on api data, understanding configuration settings of api's, ect...
     //basic math operations, sockets, ect.. 
 	
     //contract submission********************************************************************************************************* hit from other function when everything seems good
