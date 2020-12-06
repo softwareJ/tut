@@ -174,7 +174,7 @@
     			var last = i === paymentInfo.invoiceDates.length - 1 ? "end" : paymentInfo.invoiceDates[i + 1];
     			var payment = i + 1 === paymentInfo.invoiceDates.length ? "Free extended time" : paymentInfo.payPerInvoice
     			element.innerHTML += `
-                       <div class="user-frame container" style = "margin-top: 5px">
+                        <div class="user-frame container" style = "margin-top: 5px">
             		<h2><u> inv ${i+1}/${paymentInfo.invoiceDates.length-1}</u></h2>
             		<b class = "contractInfo">start date: ${paymentInfo.invoiceDates[i]} </b>
             		<hr>
@@ -325,7 +325,7 @@
     	    }
     	    
     	    function checkCurrent(value, index, targ) {
-        	    switch(index) {
+        	   switch(index) {
             	   //assignemnts
             	   case 0: 
             	        if(!value || value == null || value.length < 20 || value.length > 700) {
@@ -335,7 +335,7 @@
                 	        document.getElementById(targ.id).innerHTML = "<b><span style = 'color: green; font-size: 50px'>&#10003;</span></b>";
                 	        errObject.assignments = true;
             	        }
-        	        break;
+        	    break;
             	    //start date and end date and bi weekly, weekly monthly
             	    case 1:
             	    case 2:
@@ -365,7 +365,7 @@
                         	    document.getElementById("totalDaysErrorId").innerHTML = "<b style = 'color: red'>*The difference between the start and end date must be at least 30 days</b>"; 
                         	    errObject.startDateEndDate = false;
                 	        }
-        	           //weekly, bi weekly monthly yearly case 4
+        	        //weekly, bi weekly monthly yearly case 4
             	        var payPeriod = parseInt(document.getElementById("payPeriod").value); // must be less
             	        if((payPeriod !== 7 && payPeriod !== 14 && payPeriod !== 30 && payPeriod !== 365)) {
             	            alert("iterate ove those elemnts change the value ans set to weekly");
@@ -383,7 +383,7 @@
             	                    errObject.payPeriod = false;
             	                }
             	             }
-        	        break;
+        	    break;
             	    //hourly pay and total pay
             	    case 3:
             	    case 5: 
@@ -404,9 +404,9 @@
                         		 document.getElementById("hourlPayErrorId").innerHTML = "<b style = 'color: red'>*The hourly pay must be less than the total pay and at least $10</b>";
                         		 errObject.pay = false;
             	             }
-        	        break;
-        	        //email
-        	        case 6: 
+        	      break;
+        	      //email
+        	      case 6: 
         	            if(value && value !== null && value.length > 0 && /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(value)) {
         	                //check database
         	                document.getElementById(targ.id).innerHTML = "<b><span style = 'color: green; font-size: 50px'>&#10003;</span></b>";
@@ -415,9 +415,9 @@
         	                document.getElementById(targ.id).innerHTML = "<b style = 'color: red'>*Your email is not valid</b>";
         	                errObject.email = false;
         	            }
-        	        break;
-        	        //phone
-        	        case 7: 
+        	       break;
+        	       //phone
+        	       case 7: 
         	            if(value && value !== null && value.length > 0 && /^\d{10}$/.test(value)) {
         	                document.getElementById(targ.id).innerHTML = "<b><span style = 'color: green; font-size: 50px'>&#10003;</span></b>";
         	                errObject.phone = true;
@@ -425,9 +425,9 @@
         	                document.getElementById(targ.id).innerHTML = "<b style = 'color: red'>*Your phone number is not valid</b>";
         	                errObject.phone = false;
         	            }
-        	        break;
-        	        //signature
-        	        case 8: 
+        	       break;
+        	       //signature
+        	       case 8: 
         	            if(value && value !== null && value.length > 4) {
         	               document.getElementById(targ.id).innerHTML = "<b><span style = 'color: green; font-size: 50px'>&#10003;</span></b>";
         	               errObject.signature = true;
@@ -435,9 +435,9 @@
         	                document.getElementById(targ.id).innerHTML = "<b style = 'color: red'>*Your signature is not valid</b>";
         	                errObject.signature = false;
         	            }  
-					break;
-					//break out
-                    default: return;
+		       break;
+		       //break out
+                       default: return;
         	    }
         	    
         	//checking error count and updating div and enabling button if good, diabling if bad
