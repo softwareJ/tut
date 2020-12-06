@@ -492,15 +492,19 @@
  })();
 
 
- //live chat with ATRAIN -- shared hosting soll ill just connect my twilio account and send messages to a foreign domain and update my db 
+ //live chat. instead of sockets, have to create an api. on shared hosting. dev account.
  messages = (function() {
-
-     //connect 
-
-     //on send -- to me
-
-     //on receive from me
-
-     //
+  
+     //mail submisssion, generate single private and public token --
+     //on page load. ask for pub token
+     //if good ask for priv token
+     //use priv token to identify set
+     //if both tokens good, display page
+     //on display show messaging option -- this has no direct connection with contract
+     //when send push api array of obj...name, message {name, message}
+     //listen for last message in obj array and push to set...
+     //on my end, connect twilio and send link format with message header, so i can just push from phone
+     //show all messages in dashboard from each person 
+     //remove all client info using a cron...check for expiration, delete where priv token
 
  })();
