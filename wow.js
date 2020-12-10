@@ -199,7 +199,7 @@
              var last = i === paymentInfo.invoiceDates.length - 1 ? "end" : paymentInfo.invoiceDates[i + 1];
              var payment = i + 1 === paymentInfo.invoiceDates.length ? "Free extended time" : paymentInfo.payPerInvoice
              element.innerHTML += `
-                        <div class="user-frame container" style = "margin-top: 5px">
+              <div class="user-frame container" style = "margin-top: 5px">
             		<h2><u> inv ${i+1}/${paymentInfo.invoiceDates.length-1}</u></h2>
             		<b class = "contractInfo">start date: ${paymentInfo.invoiceDates[i]} </b>
             		<hr>
@@ -212,7 +212,7 @@
             		<b class = "contractInfo">invoice pay: $${payment} </b>
             		<hr>
             		<button class = "btn" style = "border-radius: 0px; background-color: black; color: white; margin-top: 30px;" onclick = "edit()" >Edit</button>
-    			</div> `;
+    			       </div> `;
          }
          invoiceSet.appendChild(element);
      }
